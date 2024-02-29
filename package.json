@@ -1,0 +1,23 @@
+{
+  "name": "my-electron-app",
+  "version": "1.0.0",
+  "description": "Ciallo electron app",
+  "main": "src/main.js",
+  "permissions": [
+    "notifications"
+  ],
+  "scripts": {
+    "start": "electron .",
+    "electron": "nodemon --watch main.js --exec yarn start",
+    "postinstall": "node install.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sisyphus",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^28.2.3"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.3.0"
+  }
+}
