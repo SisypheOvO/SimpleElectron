@@ -1,4 +1,4 @@
-const { app, Menu, dialog } = require('electron');
+import { app, Menu, dialog } from 'electron';
 
 function initMenu(){
     let template = [
@@ -180,4 +180,4 @@ function initMenu(){
     Menu.setApplicationMenu(menu);
 };
 
-module.exports = { initMenu };
+export default initMenu ;

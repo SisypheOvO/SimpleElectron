@@ -1,4 +1,4 @@
-const { app, Menu, Tray } = require('electron');
+import { app, Menu, Tray } from 'electron';
 
 function initTray(mainWin) {
     let trayMenu = Menu.buildFromTemplate([
@@ -24,4 +24,4 @@ function initTray(mainWin) {
     });
 };
 
-module.exports = { initTray };
+export default initTray;

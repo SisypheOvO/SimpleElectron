@@ -1,7 +1,6 @@
-const { app, BrowserWindow, globalShortcut, ipcMain } = require('electron');
-const path = require('path');
-const {initialization} = require('./app/initialization');
-const { createMainWindow } = require('./app/mainWindow');
+import { app, BrowserWindow, ipcMain, globalShortcut } from 'electron';
+import initialization from './app/initialization.js';
+import createMainWindow from './app/mainWindow.js';
 
 app.whenReady().then(function () {
     try {

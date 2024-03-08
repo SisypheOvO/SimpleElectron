@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Ciallo electron app",
   "main": "src/main.js",
+  "type": "module",
   "permissions": [
     "notifications"
   ],

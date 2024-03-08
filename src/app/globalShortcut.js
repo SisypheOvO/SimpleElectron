@@ -1,5 +1,5 @@
-const { globalShortcut } = require('electron');
-const mainWindow = require('./mainWindow');
+import { globalShortcut } from 'electron';
+import mainWindow from './mainWindow.js';
 
 function initGlobalShortcut(mainWindow) {
     globalShortcut.register('CmdOrCtrl+Alt+K', function () {
@@ -8,4 +8,4 @@ function initGlobalShortcut(mainWindow) {
 }
 
 
-module.exports = { initGlobalShortcut };
+export default initGlobalShortcut;

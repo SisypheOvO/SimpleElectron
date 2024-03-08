@@ -1,20 +1,21 @@
-const { createMainWindow } = require('./mainWindow');
-const { initMenu } = require('./menu');
-const { initTray } = require('./tray');
-const { initClipboard } = require('./clipboard');
-const { initGlobalShortcut } = require('./globalShortcut');
-const { openDialog, saveDialog, messageBox } = require('./dialog');
+// import { createMainWindow } from './mainWindow' ;
+import  initMenu  from './Menu.js' ;
+import  initTray  from './Tray.js' ;
+import  initClipboard  from './clipboard.js' ;
+import  initGlobalShortcut  from './globalShortcut.js' ;
+// import  openDialog  from './dialog.js' ;
+// import  saveDialog  from './dialog.js' ;
+// import  messageBox  from './dialog.js' ;
+import dialogFuncs from './dialog.js' ;
 
-function initialization(mainWin) {     
-        initMenu(mainWin);
+function initialization(mainWin) {   
+        initMenu();
         initTray(mainWin);
         initClipboard();
         initGlobalShortcut(mainWin);
-        openDialog();
-        saveDialog();
-        messageBox();
+        dialogFuncs.openDialog();
+        dialogFuncs.saveDialog();
+        dialogFuncs.messageBox();
 }
 
-module.exports = {
-    initialization
-};
+export default initialization ;

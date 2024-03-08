@@ -1,4 +1,4 @@
-const { dialog } = require('electron');
+import { dialog } from 'electron';
 
 function openDialog() {
     dialog.showOpenDialog({
@@ -49,9 +49,7 @@ function messageBox() {
     });
 }
 
-
-
-module.exports = {
+export default  {
     openDialog,
     saveDialog,
     messageBox
