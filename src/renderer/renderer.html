@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S!mple</title>
-    <link rel="stylesheet" href="./renderer.css">
-</head>
-<body>
-    <div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <title>Simple</title>
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="app-header">
         <h1>Ciallo Electron!</h1>
-        <button class="notifi">NOTIFI</button>
-        <button class="cialloBtn">IPC</button><br>
-        We are using <br><br>
-        Node.js <span id="node-version"></span>
-        Chromium <span id="chrome-version"></span>
-        Electron <span id="electron-version"></span>
-        
-        <script src="./renderer.js"></script>
-        <script src="index.js"></script>
+        <div class="version-info">
+          <p>Chrome <span id="chrome-version"></span></p>
+          <p>Node <span id="node-version"></span></p>
+          <p>Electron <span id="electron-version"></span></p>
+        </div>
+      </header>
+
+      <main class="app-content">
+        <section class="feature-section">
+          <h2>Features Demo</h2>
+          <div class="feature-grid">
+            <div class="feature-card">
+              <h3>File Dialog</h3>
+              <button id="open-file">Open File</button>
+              <button id="save-file">Save File</button>
+              <p id="file-path"></p>
+            </div>
+
+            <div class="feature-card">
+              <h3>Clipboard</h3>
+              <button id="copy-text">Copy Text</button>
+              <button id="paste-text">Paste Text</button>
+              <p id="clipboard-content"></p>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
-</body>
+    <script type="module" src="./scripts/renderer.js"></script>
+  </body>
 </html>

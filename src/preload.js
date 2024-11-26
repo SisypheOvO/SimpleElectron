@@ -1,26 +1,19 @@
-window.addEventListener('DOMContentLoaded', () => {
-    const replaceText = (selector, text) => {
-        const element = document.getElementById(selector);
-        if (element) element.innerText = text;
-    };
-
-    for (const type of ['chrome', 'node', 'electron']) {
-        replaceText(`${type}-version`, process.versions[type]);
-    }
-});
-
-
-// 下面的内容是preload的一个暴露接口
-
 const { contextBridge, ipcRenderer } = require('electron');
 
-contextBridge.exposeInMainWorld('SisphusAPI', {
-    ConsoleCiallo: () => {
-        ipcRenderer.invoke('console-ciallo',114514).then((result) => {
-            console.log(result);
-        });
+// 向渲染进程暴露安全的API
+contextBridge.exposeInMainWorld('electronAPI', {
+    // 版本信息
+    versions: {
+        chrome: process.versions.chrome,
+        node: process.versions.node,
+        electron: process.versions.electron
     },
-    ConsoleCialloWith: (arg) => {
-        console.log('Ciallo~', arg);
-    },
+
+    // 文件对话框
+    openFile: () => ipcRenderer.invoke('dialog:openFile'),
+    saveFile: () => ipcRenderer.invoke('dialog:saveFile'),
+
+    // 剪贴板
+    copyToClipboard: (text) => ipcRenderer.invoke('clipboard:copy', text),
+    readFromClipboard: () => ipcRenderer.invoke('clipboard:read'),
 });
