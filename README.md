@@ -1,6 +1,6 @@
 # ⚡ Simple Electron
 
-## Electron Development Kit (EDK)
+## Electron Starter
 
 <!-- markdownlint-disable MD033 -->
 
