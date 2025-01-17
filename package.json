@@ -15,11 +15,11 @@
   "author": "Sisyphus",
   "license": "ISC",
   "devDependencies": {
-    "chokidar": "^4.0.1",
-    "electron": "33.2.0",
+    "chokidar": "4.0.3",
+    "electron": "34.0.0",
     "electron-builder": "^25.1.8",
     "electron-reloader": "^1.2.3",
-    "glob": "11.0.0"
+    "glob": "11.0.1"
   },
   "config": {
     "electron_mirror": "https://npmmirror.com/mirrors/electron/",
