@@ -4,12 +4,11 @@
 
 <!-- markdownlint-disable MD033 -->
 
-> A comprehensive Electron boilerplate with pre-configured essential APIs, ready-to-use components, and best practices for desktop application development. Build your next Electron app in minutes, not hours.
+A comprehensive Electron boilerplate with pre-configured essential APIs, ready-to-use components, and best practices for desktop application development. Build your next Electron app in minutes, not hours.
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Electron](https://img.shields.io/badge/electron-33.2.0-blue.svg)
-![Platform](https://img.shields.io/badge/platform-windows%20%7C%20macos%20%7C%20linux-lightgrey.svg)
-![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+![License](https://img.shields.io/badge/license-MIT-orange.svg)
+![Electron](https://img.shields.io/badge/electron-41.2.0-blue.svg)
+![Platform](https://img.shields.io/badge/platform-windows%2010%2B%20%7C%20macos%2012%2B%20%7C%20linux-lightgrey.svg)
 
 ## 🎯 Built for Developers
 
@@ -42,21 +41,10 @@ Skip the boilerplate setup and focus on your application logic. This toolkit pro
 
 ## 🚀 Quick Start
 
-Get up and running in minutes:
-
 ```bash
-# Clone the repository
-git clone [repo-url]
-cd SimpleElectron
-
-# Install dependencies
-npm install
-
-# Start development
-npm run dev
-
-# Build for production
-npm run build
+npm install # Install dependencies
+npm run dev # Start development
+npm run build # Build for production
 ```
 
 ## 📚 Directory Structure
@@ -64,22 +52,22 @@ npm run build
 ```plaintext
 src/
 ├── app/                  # Main process
-│   ├── plugins/             # Pre-configured Native APIs
-│   └── mainWindow.js        # Main window orchestration
+│   ├── plugins/          # Pre-configured Native APIs
+│   └── mainWindow.js     # Main window orchestration
 ├── renderer/
-│   ├── assets/         # Static assets
+│   ├── assets/           # Static assets
 │   ├── scripts/
-│   │   ├── modules/    # Custom modules
-│   │   └── renderer.js # Renderer window script
-│   └── renderer.html   # Application entry point
-├── main.js             # Main process orchestration
-├── preload.js          # Secure bridge script
-└── ipc.js             # IPC communication handlers
+│   │   ├── modules/      # Custom modules
+│   │   └── renderer.js   # Renderer window script
+│   └── renderer.html     # Application entry point
+├── main.js               # Main process orchestration
+├── preload.js            # Secure bridge script
+└── ipc.js                # IPC communication handlers
 ```
 
 ## 🎯 Usage Examples
 
-```javascript
+```js
 // Example: Using the notification API
 import { initializeApp } from './app/plugins/index.js';
 
@@ -133,36 +121,4 @@ Production-ready security configurations:
 - ✅ Limited native API exposure
 - ✅ Sanitized web preferences
 
-## 🔧 Technical Details
-
-### Core Dependencies
-
-- `electron` ^33.2.0 - Framework core
-- `electron-builder` ^25.1.8 - Production packaging
-- `electron-reload` ^1.2.3 - Development workflow
-
-### Cross-Platform Support
-
-Carefully crafted for consistent behavior across:
-
-- Windows
-- macOS
-- Linux
-
-## 🤝 Contributing
-
-We welcome contributions! Here's how you can help:
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
----
-
-<p align="center">Built with ❤️ for the Electron community</p>
+We welcome contributions!

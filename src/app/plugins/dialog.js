@@ -7,6 +7,11 @@ export class DialogManager {
 
     async showOpenDialog(options = {}) {
         try {
+            if (process.platform === 'linux' && options.showHiddenFiles) {
+                console.warn('showHiddenFiles is not supported on Linux');
+                delete options.showHiddenFiles;
+            }
+
             const defaultOptions = {
                 title: 'Open File',
                 defaultPath: '.',
