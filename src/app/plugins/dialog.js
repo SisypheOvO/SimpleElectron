@@ -20,10 +20,7 @@ export class DialogManager {
                 properties: ['openFile', 'openDirectory', 'multiSelections']
             };
 
-            const result = await dialog.showOpenDialog(
-                this.mainWindow,
-                { ...defaultOptions, ...options }
-            );
+            const result = await dialog.showOpenDialog(this.mainWindow, { ...defaultOptions, ...options });
 
             console.log('Open dialog result:', result);
             return result;
@@ -42,10 +39,7 @@ export class DialogManager {
                 filters: [{ name: 'All Files', extensions: ['*'] }]
             };
 
-            const result = await dialog.showSaveDialog(
-                this.mainWindow,
-                { ...defaultOptions, ...options }
-            );
+            const result = await dialog.showSaveDialog(this.mainWindow, { ...defaultOptions, ...options });
 
             console.log('Save dialog result:', result);
             return result;
@@ -65,10 +59,7 @@ export class DialogManager {
                 buttons: ['OK']
             };
 
-            const result = await dialog.showMessageBox(
-                this.mainWindow,
-                { ...defaultOptions, ...options }
-            );
+            const result = await dialog.showMessageBox(this.mainWindow, { ...defaultOptions, ...options });
 
             console.log('Message box result:', result);
             return result;

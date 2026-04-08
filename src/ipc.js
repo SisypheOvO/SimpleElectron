@@ -3,12 +3,7 @@ import { ipcMain, dialog, clipboard } from 'electron';
 export class IPCManager {
     constructor(mainWindow) {
         this.mainWindow = mainWindow;
-        this.handlers = [
-            'dialog:openFile',
-            'dialog:saveFile',
-            'clipboard:copy',
-            'clipboard:read'
-        ];
+        this.handlers = ['dialog:openFile', 'dialog:saveFile', 'clipboard:copy', 'clipboard:read'];
     }
 
     init() {
@@ -21,18 +16,14 @@ export class IPCManager {
         ipcMain.handle('dialog:openFile', async () => {
             const result = await dialog.showOpenDialog(this.mainWindow, {
                 properties: ['openFile', 'multiSelections'],
-                filters: [
-                    { name: 'All Files', extensions: ['*'] }
-                ]
+                filters: [{ name: 'All Files', extensions: ['*'] }]
             });
             return result;
         });
 
         ipcMain.handle('dialog:saveFile', async () => {
             const result = await dialog.showSaveDialog(this.mainWindow, {
-                filters: [
-                    { name: 'All Files', extensions: ['*'] }
-                ]
+                filters: [{ name: 'All Files', extensions: ['*'] }]
             });
             return result;
         });
@@ -53,7 +44,7 @@ export class IPCManager {
     // 清理方法
     cleanup() {
         // 移除所有处理程序
-        this.handlers.forEach(channel => {
+        this.handlers.forEach((channel) => {
             try {
                 ipcMain.removeHandler(channel);
             } catch (error) {

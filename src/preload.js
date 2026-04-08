@@ -15,5 +15,5 @@ contextBridge.exposeInMainWorld('electronAPI', {
 
     // 剪贴板
     copyToClipboard: (text) => ipcRenderer.invoke('clipboard:copy', text),
-    readFromClipboard: () => ipcRenderer.invoke('clipboard:read'),
+    readFromClipboard: () => ipcRenderer.invoke('clipboard:read')
 });

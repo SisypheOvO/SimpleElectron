@@ -25,7 +25,6 @@ export class TrayManager {
             this.tray = new Tray(icon);
             this.setTrayMenu();
             this.setTrayEvents();
-
         } catch (error) {
             console.error('Error initializing tray:', error);
         }

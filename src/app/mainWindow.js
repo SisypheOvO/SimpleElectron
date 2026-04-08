@@ -17,14 +17,14 @@ export function createMainWindow() {
             contextIsolation: true,
             nodeIntegration: false,
             sandbox: true,
-            webSecurity: true,
+            webSecurity: true
         }
     });
 
     mainWindow.loadFile(path.join(__dirname, '/../renderer/renderer.html'));
 
     // if (process.env.NODE_ENV === 'development') {
-        mainWindow.webContents.openDevTools();
+    mainWindow.webContents.openDevTools();
     // }
 
     mainWindow.on('close', (event) => {
@@ -39,4 +39,4 @@ export function createMainWindow() {
     });
 
     return mainWindow;
-};
+}

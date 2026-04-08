@@ -17,13 +17,7 @@ export class MenuManager {
 
     createMenuTemplate() {
         // 返回一个数组作为菜单模板
-        return [
-            this.createFileMenu(),
-            this.createEditMenu(),
-            this.createViewMenu(),
-            this.createWindowMenu(),
-            this.createHelpMenu()
-        ];
+        return [this.createFileMenu(), this.createEditMenu(), this.createViewMenu(), this.createWindowMenu(), this.createHelpMenu()];
     }
 
     createFileMenu() {

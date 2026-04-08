@@ -2,10 +2,10 @@
 if (process.env.NODE_ENV === 'development') {
     try {
         // 注意：import() 必须在顶层使用
-        import('electron-reloader').then(module => {
+        import('electron-reloader').then((module) => {
             module.default(module, {
                 debug: true,
-                watchRenderer: true,  // 同时监视渲染进程文件
+                watchRenderer: true, // 同时监视渲染进程文件
                 ignore: [
                     'node_modules/**/*',
                     'src/renderer/**/*', // 如果使用其他方式监视渲染进程
